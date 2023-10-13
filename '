@@ -1,0 +1,23 @@
+<script lang="ts">
+    <!-- import "./styles.css"; -->
+    console.log("Ici je vais faire du code en fait.")
+</script>
+
+<nav>
+    <div class="searchBar">
+        <form action="">
+            <label for="search"></label>
+            <div class="searchPlace">
+
+                <input type="text" name="search">
+            </div>
+        </form>
+    </div>
+</nav>
+
+<style>
+    nav {
+        background-color: #171717;
+        display: flex;
+    }
+</style>
