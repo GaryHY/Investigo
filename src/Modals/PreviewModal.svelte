@@ -1,15 +1,4 @@
-<script>
-    const closeModal = () => {
-        const modal = document.querySelector(".modal");
-        if (modal != null) {
-            modal.close();
-        }
-    };
-
-    // TODO: Voir ici comment je peux exporter le contenu de l'editeur en pdf.
-</script>
-
-<dialog class="modal">
+<div class="previewModal">
     <h2>Un titre juste pour la forme</h2>
     <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
@@ -22,23 +11,11 @@
         sapiente ut maxime architecto. In commodi deserunt recusandae alias iste
         doloribus similique ullam debitis!
     </p>
-    <button class="close" on:click={closeModal}>Close</button>
-</dialog>
+</div>
 
 <style>
-    dialog {
-        width: 600px;
-        padding: 2rem;
-        border: none;
-        border-radius: 0.5rem;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        /* background-color: #171717; */
-        /* color: white; */
-    }
-
-    :global(dialog::backdrop) {
-        background: rgba(0, 0, 0, 0.7);
+    .previewModal {
+        border: 2px solid blue;
+        width: 1000px;
     }
 </style>
