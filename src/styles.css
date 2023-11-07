@@ -1,0 +1,99 @@
+/* reset css */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul[role="list"],
+ol[role="list"]{
+    list-style-type: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+.single_page {
+    display: grid;
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    height: 100vh;
+}
+
+.header{
+    background-color: #1e1e1e;
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.sidebar {
+    background-color: #171717;
+    grid-column: 1;
+    grid-row: 2 / -1;
+    border: 2px solid white;
+}
+
+.main_bar {
+    background-color: #171717;
+    grid-column: 2 / -1;
+    grid-row: 2;
+    border: 2px solid white;
+}
+
+.main {
+    background-color: #171717;
+    background-color: white;
+    grid-column: 2 / -1;
+    grid-row: 3 / -1;
+    overflow-y: scroll;
+    border: 2px solid white;
+}
+
+.fill_section {
+    border: 2px solid orange;
+    height: 300px;
+    color: black;
+    font-size: 4rem;
+    display: grid;
+    place-content: center;
+}
