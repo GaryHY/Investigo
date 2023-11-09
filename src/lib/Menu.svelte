@@ -1,6 +1,5 @@
 <script>
     // TODO: Faire venir les images du fichier ici
-    console.log("Je suis dans le menu.");
     import MenuImage from "../Menus/MenuImage.svelte";
     import MenuAudio from "../Menus/MenuAudio.svelte";
 </script>

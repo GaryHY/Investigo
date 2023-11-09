@@ -2,6 +2,7 @@
     // import des svg
     import Folder from "../Icons/TopBar/Folder.svg";
     import Loupe from "../Icons/TopBar/Loupe.svg";
+    import Plus from "../Icons/TopBar/Plus.svg";
 
     import { openSearchModal, closeSearchModal } from "../scripts/searchModal";
 

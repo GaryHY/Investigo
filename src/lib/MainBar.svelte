@@ -19,6 +19,13 @@
     import Modal from "./Modal.svelte";
     import PreviewModal from "../Modals/PreviewModal.svelte";
     import { openModal } from "../scripts/modal";
+
+    const closeModal = () => {
+        const modal = document.querySelector(".modal");
+        if (modal != null) {
+            modal.close();
+        }
+    };
 </script>
 
 {#if editor}
@@ -125,37 +132,6 @@
         </button>
     </div>
 {/if}
-
-<style>
-    /* NOTE: Le css de la previous mainbar */
-    .open_modal {
-        margin-left: auto;
-    }
-
-<script lang="ts">
-    const openMenu = () => {
-        const menu = document.querySelector(".menu");
-        if (menu != null) {
-            const isVisible = menu.getAttribute("data-visible");
-            isVisible === "true"
-                ? menu.setAttribute("data-visible", "false")
-                : menu.setAttribute("data-visible", "true");
-        }
-    };
-
-    const openModal = () => {
-        const modal = document.querySelector(".modal");
-        if (modal != null) {
-            modal.showModal();
-        }
-    };
-    const closeModal = () => {
-        const modal = document.querySelector(".modal");
-        if (modal != null) {
-            modal.close();
-        }
-    };
-</script>
 
 <div class="main_bar">
     <dialog class="modal">
