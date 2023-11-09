@@ -1,15 +1,19 @@
-<script>
+<script lang="ts">
     // TODO: Make the modal for the photo, envoyer et reseaux part
     import sidebarState from "../stores/sidebar";
 
+    // NOTE: Check if it the good  type
+    // const handleSidebarClick = (e: MouseEvent) => {
     const handleSidebarClick = (e) => {
         const active__button = document.querySelector(".actif");
         if (active__button != null) {
             active__button.classList.remove("actif");
         }
         const closestButton = e.target.closest(".highlight");
-        closestButton.classList.add("actif");
-        sidebarState.set(closestButton.id);
+        if (closestButton != null) {
+            closestButton.classList.add("actif");
+            sidebarState.set(closestButton.id);
+        }
     };
 
     // icons
@@ -25,11 +29,10 @@
     // modal
     import Modal from "./Modal.svelte";
     import InfoModal from "../Modals/InfoModal.svelte";
+    import PhotoModal from "../Modals/InfoModal.svelte";
+    import EnvoyerModal from "../Modals/EnvoyerModal.svelte";
+    import ReseauxModal from "../Modals/ReseauxModal.svelte";
     import { openModal } from "../scripts/modal";
-
-    // store
-    // import sidebarStore from "../stores/mainContent";
-    // sidebarStore.subscribe(data => {})
 </script>
 
 <div class="sidebar">
@@ -78,15 +81,39 @@
         <img class="sidebar__img" src={Facture} alt="" />
         <div class="tooltip">Facture</div>
     </button>
-    <button class="sidebar__button highlight">
+    <Modal>
+        <PhotoModal />
+    </Modal>
+    <button
+        on:click={(e) => {
+            openModal(e);
+        }}
+        class="sidebar__button highlight"
+    >
         <img class="sidebar__img" src={Photo} alt="" />
         <div class="tooltip">Photo</div>
     </button>
-    <button class="sidebar__button highlight">
+    <Modal>
+        <EnvoyerModal />
+    </Modal>
+    <button
+        on:click={(e) => {
+            openModal(e);
+        }}
+        class="sidebar__button highlight"
+    >
         <img class="sidebar__img" src={Envoyer} alt="" />
         <div class="tooltip">Envoyer</div>
     </button>
-    <button class="sidebar__button highlight">
+    <Modal>
+        <ReseauxModal />
+    </Modal>
+    <button
+        on:click={(e) => {
+            openModal(e);
+        }}
+        class="sidebar__button highlight"
+    >
         <img class="sidebar__img" src={Reseaux} alt="" />
         <div class="tooltip">Reseaux</div>
     </button>

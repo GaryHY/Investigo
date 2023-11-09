@@ -1,3 +1,4 @@
+// TODO: Il me faut utiliser cela dans mon programme pour rendre mon programme safe en fait.
 export type TMainContent = string;
 
 export interface ISearchResult {
@@ -6,6 +7,7 @@ export interface ISearchResult {
     status: string,
 }
 
+// Union type or enum ?
 export enum MainContent {
     Rapport = "rapport",
     Mandat = "mandat",

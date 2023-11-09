@@ -7,7 +7,5 @@
 <style>
     .infoModal {
         width: 900px;
-        background-color: red;
-        border: 1px solid blue;
     }
 </style>

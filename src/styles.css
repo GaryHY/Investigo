@@ -144,6 +144,10 @@ button.active > path {
     text-align: center;
 }
 
+.taright {
+    text-align: right;
+}
+
 .underline{
     text-decoration: underline;
 }
@@ -160,13 +164,26 @@ button.active > path {
     font-weight: 100;
 }
 
-/* .title{font-size: 4rem} */
-
-/* .subtitle{font-size: 2rem;} */
-
 .flex{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+.mic {
+    margin-inline: auto;
+}
+
+.wsmall {
+    width: 60%;
+}
+
+.wmedium {
+    width: 80%;
+}
+
+/* .space-small */
+
+/* .title{font-size: 4rem} */
+
+/* .subtitle{font-size: 2rem;} */

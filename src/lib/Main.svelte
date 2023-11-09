@@ -1,11 +1,36 @@
 <script>
     // @ts-nocheck
 
-    let mainState = "rapport";
+    // TODO: Changer cela des que je finis avec mandat
+    // let mainState = "rapport";
+    let mainState = "mandat";
     import sidebarState from "../stores/sidebar";
     sidebarState.subscribe((newValue) => {
         mainState = newValue;
     });
+
+    //////////////////////////////////////////////////
+    // pagination
+    // NOTE: Ce truc depend de mainState donc il devrait etre appele avec le subscribe.
+    // TODO: creer un fichier pagination.js pour gerer cela.
+
+    // Valeur initial a mettre dans le store.
+    // let pageCount = 1;
+
+    const heightPaper = "14in";
+    function convertInToPx(inch) {
+        console.log("Je veux un truc qui me donne autour de 96px");
+        console.log("Ou l'inverse ie : ", 1 / 96);
+        console.log("The device pixel ratio: ", window.devicePixelRatio);
+    }
+    function getPageCount() {
+        const paper = document.querySelector(".paper");
+        console.log(paper);
+        convertInToPx(1);
+        return 1;
+    }
+
+    ////////////////////////////////////////////////////
 
     import MainBar from "./MainBar.svelte";
     import { onMount, onDestroy } from "svelte";
@@ -23,8 +48,9 @@
 
     let element;
     let editor;
-    if (mainState === "rapport") {
-        onMount(() => {
+    onMount(() => {
+        if (mainState === "rapport") {
+            console.log("je mount l'editor");
             editor = new Editor({
                 element: element,
                 extensions: [
@@ -39,14 +65,19 @@
                     editor = editor;
                 },
             });
-        });
+            // NOTE: Je mets un else pour le moment mais faudra le bouger surement
+        } else {
+            let pageCount = getPageCount();
+        }
+    });
 
-        onDestroy(() => {
+    onDestroy(() => {
+        if (mainState === "rapport") {
             if (editor) {
                 editor.destroy();
             }
-        });
-    }
+        }
+    });
 </script>
 
 {#if mainState === "rapport"}
