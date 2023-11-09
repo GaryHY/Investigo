@@ -56,12 +56,23 @@ a {
 .single_page {
     display: grid;
     grid-template-rows: repeat(13, 1fr);
-    grid-template-columns: repeat(7, 1fr);
+    /* NOTE: Ici je peux modifier la taille de la sidebar */
+    /* old value : 7 */
+    grid-template-columns: repeat(18, 1fr);
     height: 100vh;
+    background-color: #171717;
+}
+
+button:is(:hover, :focus) {
+    cursor:pointer;
+}
+
+svg {
+    background: none;
+    margin-inline: auto;
 }
 
 .header{
-    background-color: #1e1e1e;
     grid-column: 1 / -1;
     grid-row: 1;
 }
@@ -70,23 +81,21 @@ a {
     background-color: #171717;
     grid-column: 1;
     grid-row: 2 / -1;
-    border: 2px solid white;
 }
 
 .main_bar {
     background-color: #171717;
     grid-column: 2 / -1;
     grid-row: 2;
-    border: 2px solid white;
+    border: 1px solid white;
+    border-radius: 1rem;
 }
 
 .main {
-    background-color: #171717;
     background-color: white;
     grid-column: 2 / -1;
     grid-row: 3 / -1;
     overflow-y: scroll;
-    border: 2px solid white;
 }
 
 .fill_section {
