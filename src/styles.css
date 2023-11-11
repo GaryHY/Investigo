@@ -67,7 +67,7 @@ button:is(:hover, :focus) {
     cursor:pointer;
 }
 
-svg {
+img, svg {
     background: none;
     margin-inline: auto;
 }
