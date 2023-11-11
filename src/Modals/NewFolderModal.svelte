@@ -28,9 +28,6 @@
 <style>
     .newFolderModal {
         display: grid;
-        /* align-items: center; */
-        /* flex-direction: column; */
-        /* justify-content: center; */
         gap: 1rem;
     }
     .form__group {

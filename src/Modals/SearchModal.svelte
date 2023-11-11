@@ -82,7 +82,6 @@
         display: none;
         position: absolute;
         width: 45%;
-        left: 54%;
         left: 50%;
         transform: translateX(-50%);
         top: 10%;
