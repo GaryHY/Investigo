@@ -174,7 +174,7 @@
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
         width: 100%;
-        padding: 0.5rem 1rem;
+        padding: 0.7rem 1rem;
         border: 1px solid white;
         background-color: #111111;
         color: white;
