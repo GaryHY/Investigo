@@ -166,12 +166,6 @@
         background-color: #27272d;
     }
 
-    /* TODO: A ajouter des que je mets les svg */
-
-    .mainbar__button:hover path {
-        fill: white;
-    }
-
     .mainbar__tooltip {
         display: none;
         position: absolute;
@@ -208,18 +202,6 @@
         padding: 1rem 1rem;
         border-radius: 0.5rem;
         border: none;
-    }
-
-    dialog {
-        width: 600px;
-        padding: 2rem;
-        border: none;
-        border-radius: 0.5rem;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        /* background-color: #171717; */
-        /* color: white; */
     }
 
     .mainbar__button.active {

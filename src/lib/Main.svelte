@@ -120,6 +120,7 @@
         /* NOTE: The inital value for width and height are here. */
         aspect-ratio: 8.5 / 11;
         margin-inline: auto;
+        overflow: hidden;
     }
 
     .editortext {
