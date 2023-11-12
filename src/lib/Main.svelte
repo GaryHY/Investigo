@@ -45,6 +45,7 @@
     import Mandat from "../Templates/Mandat.svelte";
     import Devis from "../Templates/Devis.svelte";
     import Facture from "../Templates/Facture.svelte";
+    // import Photos from "../Templates/Photos.svelte";
 
     let element;
     let editor;
@@ -108,6 +109,10 @@
         {#if mainState === "facture"}
             <Facture />
         {/if}
+        <!-- Je le commente en attendant que je gere le probleme de pagination. -->
+        <!-- {#if mainState === "photos"} -->
+        <!--     <Photos /> -->
+        <!-- {/if} -->
     </div>
 </div>
 
