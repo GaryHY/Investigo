@@ -99,7 +99,11 @@
     <div
         on:consider={handleConsider}
         on:finalize={handleFinalize}
-        use:dndzone={{ items: images, flipDurationMs: flipDurationMs }}
+        use:dndzone={{
+            items: images,
+            flipDurationMs: flipDurationMs,
+            dropTargetStyle: {},
+        }}
         class="image__container"
     >
         {#each images as card (card.id)}
