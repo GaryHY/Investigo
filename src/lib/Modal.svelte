@@ -20,6 +20,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
         position: relative;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     :global(dialog::backdrop) {

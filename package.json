@@ -16,7 +16,8 @@
     "@tiptap/extension-text-align": "^2.1.12",
     "@tiptap/extension-underline": "^2.1.12",
     "@tiptap/pm": "^2.1.12",
-    "@tiptap/starter-kit": "^2.1.12"
+    "@tiptap/starter-kit": "^2.1.12",
+    "svelte-dnd-action": "^0.9.31"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",

@@ -29,7 +29,7 @@
     // modal
     import Modal from "./Modal.svelte";
     import InfoModal from "../Modals/InfoModal.svelte";
-    import PhotoModal from "../Modals/InfoModal.svelte";
+    import PhotoModal from "../Modals/PhotoModal.svelte";
     import EnvoyerModal from "../Modals/EnvoyerModal.svelte";
     import ReseauxModal from "../Modals/ReseauxModal.svelte";
     import { openModal } from "../scripts/modal";
