@@ -39,13 +39,7 @@
     <Modal>
         <InfoModal />
     </Modal>
-    <button
-        id="info"
-        class="sidebar__button"
-        on:click={(e) => {
-            openModal(e);
-        }}
-    >
+    <button id="info" class="sidebar__button" on:click={openModal}>
         <img class="sidebar__img" src={Info} alt="" />
         <div class="tooltip">Informations</div>
     </button>
@@ -84,36 +78,21 @@
     <Modal>
         <PhotoModal />
     </Modal>
-    <button
-        on:click={(e) => {
-            openModal(e);
-        }}
-        class="sidebar__button highlight"
-    >
+    <button id="photos" on:click={openModal} class="sidebar__button highlight">
         <img class="sidebar__img" src={Photo} alt="" />
         <div class="tooltip">Photo</div>
     </button>
     <Modal>
         <EnvoyerModal />
     </Modal>
-    <button
-        on:click={(e) => {
-            openModal(e);
-        }}
-        class="sidebar__button highlight"
-    >
+    <button on:click={openModal} class="sidebar__button highlight">
         <img class="sidebar__img" src={Envoyer} alt="" />
         <div class="tooltip">Envoyer</div>
     </button>
     <Modal>
         <ReseauxModal />
     </Modal>
-    <button
-        on:click={(e) => {
-            openModal(e);
-        }}
-        class="sidebar__button highlight"
-    >
+    <button on:click={openModal} class="sidebar__button highlight">
         <img class="sidebar__img" src={Reseaux} alt="" />
         <div class="tooltip">Reseaux</div>
     </button>
