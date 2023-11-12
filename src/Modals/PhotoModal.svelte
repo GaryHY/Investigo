@@ -10,6 +10,10 @@
     import { dndzone } from "svelte-dnd-action";
     import { flip } from "svelte/animate";
 
+    import Modal from "../lib/Modal.svelte";
+    import SinglePhotoModal from "./SinglePhotoModal.svelte";
+    // import { openModal } from "../scripts/modal";
+
     const flipDurationMs = 100;
 
     // TODO: Put this into a store.
@@ -77,8 +81,20 @@
         images = e.detail.items;
         console.log("Le nouveau images est : ", images);
     }
+
+    function openPhotoModal() {
+        const childModal = document.querySelector(".singlePhotoModal");
+
+        const modal = childModal.closest(".modal");
+        if (modal != null) {
+            modal.show();
+        }
+    }
 </script>
 
+<Modal>
+    <SinglePhotoModal />
+</Modal>
 <div class="photoModal">
     <div
         on:consider={handleConsider}
@@ -87,7 +103,11 @@
         class="image__container"
     >
         {#each images as card (card.id)}
-            <button class="item" animate:flip={{ duration: flipDurationMs }}>
+            <button
+                class="item"
+                animate:flip={{ duration: flipDurationMs }}
+                on:click={openPhotoModal}
+            >
                 <img
                     class="placeholder"
                     src={card.img}
@@ -132,5 +152,9 @@
 
     .save__button:hover {
         cursor: pointer;
+    }
+
+    :global(.singlePhotoModal) {
+        background-color: red;
     }
 </style>
