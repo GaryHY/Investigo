@@ -15,6 +15,7 @@
         padding: 6rem;
         border: none;
         border-radius: 0.5rem;
+        border-radius: 1rem;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
