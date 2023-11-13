@@ -118,7 +118,7 @@
 <style>
     header {
         background-color: #171717;
-        padding-block: 0.5rem;
+        padding-block: 0.75rem;
         width: 100vw;
     }
 
@@ -185,16 +185,9 @@
         font-size: 1.4rem;
     }
 
-    /* .searchBar__input:is(:focus, :focus-visible) { */
-    /* outline: none; */
-    /* border: 2px solid #2ea6ff; */
-    /* border: none; */
-    /* outline: 2px solid #2ea6ff; */
-    /* } */
-
     .header__button {
         border: none;
-        padding: 1rem;
+        padding: 0.75rem;
         color: white;
         border-radius: 0.5rem;
         position: relative;
