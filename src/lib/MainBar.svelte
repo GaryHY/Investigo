@@ -12,6 +12,9 @@
     import TALeft from "../Icons/Mainbar/TALeft.svg";
     import TACenter from "../Icons/Mainbar/TACenter.svg";
     import TARight from "../Icons/Mainbar/TARight.svg";
+    import Heading1 from "../Icons/Mainbar/Heading-1.svg";
+    import Heading2 from "../Icons/Mainbar/Heading-2.svg";
+    import Paragraph from "../Icons/Mainbar/Paragraph.svg";
 
     import { openMenu } from "../scripts/menu";
 
@@ -20,45 +23,10 @@
     import PreviewModal from "../Modals/PreviewModal.svelte";
     import { openModal } from "../scripts/modal";
 
-    const closeModal = () => {
-        const modal = document.querySelector(".modal");
-        if (modal != null) {
-            modal.close();
-        }
-    };
 </script>
 
 {#if editor}
     <div class="main_bar">
-        <!-- TODO: Faire une select list pour les tailles de header. -->
-        <!-- TODO: Ou encore faire une analyse pour voir les niveaux de heading dont j'ai besoin. -->
-        <button
-            class="mainbar__button"
-            on:click={() => {
-                editor.chain().focus().toggleHeading({ level: 1 }).run();
-            }}
-            class:active={editor.isActive("heading", { level: 1 })}
-        >
-            H1
-            <div class="mainbar__tooltip">header h1</div>
-        </button>
-        <button
-            class="mainbar__button"
-            on:click={() =>
-                editor.chain().focus().toggleHeading({ level: 2 }).run()}
-            class:active={editor.isActive("heading", { level: 2 })}
-        >
-            H2
-            <div class="mainbar__tooltip">header h2</div>
-        </button>
-        <button
-            class="mainbar__button"
-            on:click={() => editor.chain().focus().setParagraph().run()}
-            class:active={editor.isActive("paragraph")}
-        >
-            P
-            <div class="mainbar__tooltip">Parargraphe</div>
-        </button>
         <button
             class="mainbar__button"
             on:click={() => editor.chain().focus().toggleBold().run()}
@@ -130,6 +98,33 @@
             <img class="icon" src={Hamburger} alt="icon hamburger" />
             <div class="mainbar__tooltip">Apercu image</div>
         </button>
+            <button
+                class="mainbar__button"
+                on:click={() => {
+                    editor.chain().focus().toggleHeading({ level: 1 }).run();
+                }}
+                class:active={editor.isActive("heading", { level: 1 })}
+            >
+                <img class="icon" src={Heading1} alt="icon print" />
+                <div class="mainbar__tooltip">header h1</div>
+            </button>
+            <button
+                class="mainbar__button"
+                on:click={() =>
+                    editor.chain().focus().toggleHeading({ level: 2 }).run()}
+                class:active={editor.isActive("heading", { level: 2 })}
+            >
+                <img class="icon" src={Heading2} alt="icon print" />
+                <div class="mainbar__tooltip">header h2</div>
+            </button>
+            <button
+                class="mainbar__button"
+                on:click={() => editor.chain().focus().setParagraph().run()}
+                class:active={editor.isActive("paragraph")}
+            >
+                <img class="icon" src={Paragraph} alt="icon print" />
+                <div class="mainbar__tooltip">Parargraphe</div>
+            </button>
     </div>
 {/if}
 
