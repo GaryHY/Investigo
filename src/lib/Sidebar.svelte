@@ -15,6 +15,14 @@
         }
     };
 
+    let file__missing = {
+        mandat: true,
+        devis: false,
+        facture: true,
+        pompier: true,
+        huissier: false,
+    };
+
     // icons
     import Info from "../Icons/Sidebar/Info.svg";
     import Rapport from "../Icons/Sidebar/Rapport.svg";
@@ -60,6 +68,7 @@
     >
         <img class="sidebar__img" src={Devis} alt="" />
         <div class="tooltip">Devis</div>
+        <div class="file__missing" data-done={file__missing.devis} />
     </button>
     <button
         id="mandat"
@@ -68,6 +77,7 @@
     >
         <img class="sidebar__img" src={Mandat} alt="" />
         <div class="tooltip">Mandat</div>
+        <div class="file__missing" data-done={file__missing.mandat} />
     </button>
     <button
         id="facture"
@@ -76,6 +86,7 @@
     >
         <img class="sidebar__img" src={Facture} alt="" />
         <div class="tooltip">Facture</div>
+        <div class="file__missing" data-done={file__missing.facture} />
     </button>
     <Modal>
         <PhotoModal />
@@ -91,6 +102,7 @@
     >
         <img class="sidebar__img" src={Fire} alt="" />
         <div class="tooltip">Pompiers</div>
+        <div class="file__missing" data-done={file__missing.pompier} />
     </button>
     <button
         id="justice"
@@ -99,6 +111,7 @@
     >
         <img class="sidebar__img" src={Justice} alt="" />
         <div class="tooltip">Huissier</div>
+        <div class="file__missing" data-done={file__missing.huissier} />
     </button>
     <button
         id="person"
@@ -139,6 +152,7 @@
         padding-block: 1.1rem;
         /* NOTE: Pour les tooltips */
         position: relative;
+        outline: 2px solid #27272d;
     }
 
     .sidebar__img {
@@ -177,6 +191,22 @@
         transform: translateY(-50%) rotateZ(45deg);
         width: 20px;
         aspect-ratio: 1;
+    }
+
+    .file__missing {
+        position: absolute;
+        right: 0;
+        top: -0.5rem;
+        right: 1rem;
+        top: 1rem;
+        width: 10px;
+        border-radius: 100vw;
+        aspect-ratio: 1;
+        background-color: red;
+    }
+
+    .file__missing[data-done="false"] {
+        background-color: limegreen;
     }
 
     .sidebar__button:hover .tooltip {
