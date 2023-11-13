@@ -157,11 +157,17 @@ button.active > path {
 }
 
 .bold{
-    font-weight: 700;
+    font-weight: 800;
 }
 
+.lightbold {
+    font-weight: 600;
+}
+
+/* TODO: I do not see the change between the font weight. */
 .italic{
-    font-weight: 100;
+    font-weight: 200;
+    font-style: italic;
 }
 
 .flex{
@@ -182,7 +188,41 @@ button.active > path {
     width: 80%;
 }
 
-/* .space-small */
+.color__blue {
+    color: blue;
+}
+
+.mt-small {
+    margin-top: 1rem;
+}
+
+.mt-medium {
+    margin-top: 2rem;
+}
+
+.mt-large{
+    margin-top: 3rem;
+}
+
+.mt-xlarge {
+    margin-top: 15rem;
+}
+
+.space-small > * {
+    margin-top: 1rem;
+}
+
+.space-medium > * {
+    margin-top: 2rem;
+}
+
+.space-large > * {
+    margin-top: 3rem;
+}
+
+.space-xlarge > * {
+    margin-top: 5rem;
+}
 
 /* .title{font-size: 4rem} */
 
