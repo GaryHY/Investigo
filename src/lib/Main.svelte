@@ -123,7 +123,8 @@
         padding: 1in;
         width: 14in;
         /* NOTE: The inital value for width and height are here. */
-        aspect-ratio: 8.5 / 11;
+        /* TODO: I need that back when I have implemented pagination. */
+        /* aspect-ratio: 8.5 / 11; */
         margin-inline: auto;
         overflow: hidden;
     }
