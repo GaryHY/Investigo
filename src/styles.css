@@ -207,6 +207,10 @@ button.active > path {
     margin-top: 15rem;
 }
 
+.mla {
+    margin-left: auto;
+}
+
 .space-small > * {
     margin-top: 1rem;
 }
