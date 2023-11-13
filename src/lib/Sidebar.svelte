@@ -1,5 +1,4 @@
 <script lang="ts">
-    // TODO: Make the modal for the photo, envoyer et reseaux part
     import sidebarState from "../stores/sidebar";
 
     // NOTE: Check if it the good  type
@@ -85,20 +84,6 @@
         <img class="sidebar__img" src={Photo} alt="" />
         <div class="tooltip">Photo</div>
     </button>
-    <Modal>
-        <EnvoyerModal />
-    </Modal>
-    <button on:click={openModal} class="sidebar__button highlight">
-        <img class="sidebar__img" src={Envoyer} alt="" />
-        <div class="tooltip">Envoyer</div>
-    </button>
-    <Modal>
-        <ReseauxModal />
-    </Modal>
-    <button on:click={openModal} class="sidebar__button highlight">
-        <img class="sidebar__img" src={Reseaux} alt="" />
-        <div class="tooltip">Reseaux</div>
-    </button>
     <button
         id="fire"
         class="sidebar__button highlight"
@@ -113,7 +98,7 @@
         on:click={handleSidebarClick}
     >
         <img class="sidebar__img" src={Justice} alt="" />
-        <div class="tooltip">Justice</div>
+        <div class="tooltip">Huissier</div>
     </button>
     <button
         id="person"
@@ -122,6 +107,20 @@
     >
         <img class="sidebar__img" src={Person} alt="" />
         <div class="tooltip">Rencontre</div>
+    </button>
+    <Modal>
+        <EnvoyerModal />
+    </Modal>
+    <button on:click={openModal} class="sidebar__button highlight">
+        <img class="sidebar__img" src={Envoyer} alt="" />
+        <div class="tooltip">Envoyer</div>
+    </button>
+    <Modal>
+        <ReseauxModal />
+    </Modal>
+    <button on:click={openModal} class="sidebar__button highlight">
+        <img class="sidebar__img" src={Reseaux} alt="" />
+        <div class="tooltip">Reseaux</div>
     </button>
 </div>
 
