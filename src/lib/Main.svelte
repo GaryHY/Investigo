@@ -81,9 +81,7 @@
     });
 </script>
 
-{#if mainState === "rapport"}
-    <MainBar {editor} />
-{/if}
+<MainBar {editor} />
 <div class="main" on:scroll={scrollMenu}>
     <div class="paper">
         {#if mainState === "rapport"}
