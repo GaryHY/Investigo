@@ -21,7 +21,8 @@
     }
 
     .title {
-        text-transform: capitalize;
+        text-transform: uppercase;
+        font-size: 2.5rem;
     }
 
     .logo_air {
