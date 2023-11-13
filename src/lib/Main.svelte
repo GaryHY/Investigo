@@ -3,8 +3,9 @@
 
     // TODO: Changer cela des que je finis avec mandat
     // let mainState = "rapport";
-    let mainState = "mandat";
+    let mainState = "rapport";
     import sidebarState from "../stores/sidebar";
+    console.log("Je veux voir la valeur du state", mainState);
     sidebarState.subscribe((newValue) => {
         mainState = newValue;
     });

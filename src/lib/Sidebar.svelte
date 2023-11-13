@@ -1,19 +1,16 @@
 <script lang="ts">
+    let active__button = "rapport";
     import sidebarState from "../stores/sidebar";
+    sidebarState.subscribe((newValue) => {
+        active__button = newValue;
+    });
 
-    // NOTE: Check if it the good  type
-    // const handleSidebarClick = (e: MouseEvent) => {
-    const handleSidebarClick = (e) => {
-        const active__button = document.querySelector(".actif");
-        if (active__button != null) {
-            active__button.classList.remove("actif");
-        }
+    function setState(e) {
         const closestButton = e.target.closest(".highlight");
         if (closestButton != null) {
-            closestButton.classList.add("actif");
             sidebarState.set(closestButton.id);
         }
-    };
+    }
 
     let file__missing = {
         mandat: true,
@@ -55,8 +52,9 @@
     </button>
     <button
         id="rapport"
-        class="sidebar__button highlight actif"
-        on:click={handleSidebarClick}
+        class="sidebar__button highlight"
+        class:actif={active__button == "rapport"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Rapport} alt="" />
         <div class="tooltip">Rapport</div>
@@ -64,7 +62,8 @@
     <button
         id="devis"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "devis"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Devis} alt="" />
         <div class="tooltip">Devis</div>
@@ -73,7 +72,8 @@
     <button
         id="mandat"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "mandat"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Mandat} alt="" />
         <div class="tooltip">Mandat</div>
@@ -82,7 +82,8 @@
     <button
         id="facture"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "facture"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Facture} alt="" />
         <div class="tooltip">Facture</div>
@@ -98,7 +99,8 @@
     <button
         id="fire"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "fire"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Fire} alt="" />
         <div class="tooltip">Pompiers</div>
@@ -107,7 +109,8 @@
     <button
         id="justice"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "justice"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Justice} alt="" />
         <div class="tooltip">Huissier</div>
@@ -116,7 +119,8 @@
     <button
         id="person"
         class="sidebar__button highlight"
-        on:click={handleSidebarClick}
+        class:actif={active__button == "person"}
+        on:click={setState}
     >
         <img class="sidebar__img" src={Person} alt="" />
         <div class="tooltip">Rencontre</div>
