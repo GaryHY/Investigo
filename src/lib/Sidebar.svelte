@@ -117,6 +117,7 @@
 
     .sidebar__img {
         filter: brightness(0.6);
+        margin-inline: auto;
     }
 
     /* .sidebar__button:hover, */

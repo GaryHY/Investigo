@@ -69,7 +69,6 @@ button:is(:hover, :focus) {
 
 img, svg {
     background: none;
-    margin-inline: auto;
 }
 
 .header{
