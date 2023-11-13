@@ -25,6 +25,9 @@
     import Photo from "../Icons/Sidebar/Photo.svg";
     import Facture from "../Icons/Sidebar/Facture.svg";
     import Reseaux from "../Icons/Sidebar/Reseaux.svg";
+    import Fire from "../Icons/Sidebar/Fire.svg";
+    import Justice from "../Icons/Sidebar/Justice.svg";
+    import Person from "../Icons/Sidebar/Person.svg";
 
     // modal
     import Modal from "./Modal.svelte";
@@ -41,7 +44,7 @@
     </Modal>
     <button id="info" class="sidebar__button" on:click={openModal}>
         <img class="sidebar__img" src={Info} alt="" />
-        <div class="tooltip">Informations</div>
+        <div class="tooltip">Infos</div>
     </button>
     <button
         id="rapport"
@@ -96,13 +99,37 @@
         <img class="sidebar__img" src={Reseaux} alt="" />
         <div class="tooltip">Reseaux</div>
     </button>
+    <button
+        id="fire"
+        class="sidebar__button highlight"
+        on:click={handleSidebarClick}
+    >
+        <img class="sidebar__img" src={Fire} alt="" />
+        <div class="tooltip">Pompiers</div>
+    </button>
+    <button
+        id="justice"
+        class="sidebar__button highlight"
+        on:click={handleSidebarClick}
+    >
+        <img class="sidebar__img" src={Justice} alt="" />
+        <div class="tooltip">Justice</div>
+    </button>
+    <button
+        id="person"
+        class="sidebar__button highlight"
+        on:click={handleSidebarClick}
+    >
+        <img class="sidebar__img" src={Person} alt="" />
+        <div class="tooltip">Rencontre</div>
+    </button>
 </div>
 
 <style>
     .sidebar {
         display: flex;
         flex-direction: column;
-        padding-top: 7rem;
+        padding-top: 4.2rem;
     }
 
     .sidebar__button {
@@ -110,7 +137,7 @@
         background: none;
         margin-inline: auto;
         width: 100%;
-        padding-block: 1.5rem;
+        padding-block: 1.1rem;
         /* NOTE: Pour les tooltips */
         position: relative;
     }

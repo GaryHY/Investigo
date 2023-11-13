@@ -58,7 +58,7 @@ a {
     grid-template-rows: repeat(13, 1fr);
     /* NOTE: Ici je peux modifier la taille de la sidebar */
     /* old value : 7 */
-    grid-template-columns: repeat(18, 1fr);
+    grid-template-columns: repeat(22, 1fr);
     height: 100vh;
     background-color: #171717;
 }
