@@ -122,12 +122,16 @@
 
     .auth__button {
         border: none;
-        background-color: #2ea6ff;
+        background-color: hsl(206, 100%, 39%);
         color: white;
         padding: 1rem 1.5rem;
         font-weight: 450;
         border-radius: 1.125rem;
         font-size: inherit;
         margin-top: 2rem;
+    }
+    .auth__button:hover {
+        cursor: pointer;
+        background-color: hsl(206, 100%, 59%);
     }
 </style>
