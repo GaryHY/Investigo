@@ -3,12 +3,8 @@
 </script>
 
 <div class="mandat">
-    <div class="mandat__top flex">
-        <img class="logo_air" src={logo_air} alt="logo_air" />
-        <img class="logo_snarp" src={logo_snarp} alt="logo_snarp" />
-    </div>
+    <TemplateHeader title="mandat" />
     <div class="mt-large">
-        <h2 class="tacenter">Mandat</h2>
         <h3 class="tacenter mt-medium">Contrat de mission</h3>
         <p class="italic tacenter mt-small">
             Type de contrat preconise par le syndicat National des Agents de
@@ -339,10 +335,6 @@
     .mandat {
         font-size: 1.5rem;
         outline: 1px solid red;
-    }
-
-    .logo_air {
-        width: 20rem;
     }
 
     .flex-start {
