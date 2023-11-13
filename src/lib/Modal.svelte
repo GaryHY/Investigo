@@ -21,6 +21,8 @@
         transform: translate(-50%, -50%);
         position: relative;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background-color: #161716;
+        color: white;
     }
 
     :global(dialog::backdrop) {
@@ -34,6 +36,5 @@
         position: absolute;
         right: 2rem;
         top: 2rem;
-        border: 1px solid hotpink;
     }
 </style>
