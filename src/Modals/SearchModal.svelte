@@ -13,6 +13,7 @@
         status: string;
     }
 
+    // TODO: Mettre tout cela dans un store que je vais actualiser on change.
     let dossiers: IFolder[] = [
         {
             id: "173432383",
@@ -93,7 +94,7 @@
         border-radius: 1rem;
         overflow: hidden;
         outline: none;
-        font-size: 1.3rem;
+        /* font-size: 1.3rem; */
     }
 
     .folder__button {
@@ -115,6 +116,9 @@
         display: flex;
         align-items: center;
         gap: 1.5rem;
+    }
+    .folder__name {
+        font-size: 1.5rem;
     }
 
     .folder:is(:hover, :focus-visible) {

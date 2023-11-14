@@ -31,10 +31,15 @@
 
     .closeModal {
         border: none;
-        padding: 0.5rem;
+        padding: 0.75rem;
         background: transparent;
         position: absolute;
         right: 2rem;
         top: 2rem;
+        border-radius: 100vw;
+    }
+
+    .closeModal:hover {
+        background-color: #1e1e1e;
     }
 </style>

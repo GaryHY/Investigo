@@ -53,7 +53,7 @@
         </div>
         <div class="main_bar_group split">
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() => {
                     editor.chain().focus().toggleHeading({ level: 1 }).run();
                 }}
@@ -63,7 +63,7 @@
                 <div class="mainbar__tooltip">header h1</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() =>
                     editor.chain().focus().toggleHeading({ level: 2 }).run()}
                 class:active={editor.isActive("heading", { level: 2 })}
@@ -72,7 +72,7 @@
                 <div class="mainbar__tooltip">header h2</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() => editor.chain().focus().setParagraph().run()}
                 class:active={editor.isActive("paragraph")}
             >
@@ -80,7 +80,7 @@
                 <div class="mainbar__tooltip">Parargraphe</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() => editor.chain().focus().toggleBold().run()}
                 class:active={editor.isActive("bold")}
             >
@@ -88,7 +88,7 @@
                 <div class="mainbar__tooltip">Bold</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() => editor.chain().focus().toggleItalic().run()}
                 class:active={editor.isActive("italic")}
             >
@@ -96,7 +96,7 @@
                 <div class="mainbar__tooltip">Italic</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() => editor.chain().focus().toggleUnderline().run()}
                 class:active={editor.isActive("underline")}
             >
@@ -104,17 +104,17 @@
                 <div class="mainbar__tooltip">Underline</div>
             </button>
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() =>
                     editor.chain().focus().setTextAlign("left").run()}
                 class:active={editor.isActive({ textAlign: "left" })}
             >
-                <img src={TALeft} alt="left align icon" />
+                <img class="icon" src={TALeft} alt="left align icon" />
                 <div class="mainbar__tooltip">Aligner a gauche</div>
             </button>
 
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() =>
                     editor.chain().focus().setTextAlign("center").run()}
                 class:active={editor.isActive({ textAlign: "center" })}
@@ -124,7 +124,7 @@
             </button>
 
             <button
-                class="mainbar__button"
+                class="mainbar__button open_modal"
                 on:click={() =>
                     editor.chain().focus().setTextAlign("right").run()}
                 class:active={editor.isActive({ textAlign: "right" })}
@@ -160,10 +160,6 @@
 {/if}
 
 <style>
-    /* NOTE: En attendant d'avoir les autres boutons */
-    .open_modal {
-        margin-left: auto;
-    }
     .main_bar {
         display: flex;
         align-items: center;
@@ -186,6 +182,7 @@
 
     .mainbar__button {
         padding: 0.75rem 1rem;
+        padding: 0.5rem;
         border-radius: 0.5rem;
         border: none;
         background: none;
@@ -238,7 +235,7 @@
         border: none;
     }
     .open_modal {
-        padding: 1rem 1rem;
+        padding: 0.75rem;
         border-radius: 0.5rem;
         border: none;
     }

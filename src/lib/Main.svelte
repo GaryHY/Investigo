@@ -129,7 +129,10 @@
     }
 
     .editortext {
+        /* NOTE: Original value when paper add the aspect-ratio, but remove because no pagination */
         height: 100%;
+        height: 20vh;
+        outline: 2px solid rebeccapurple;
     }
 
     .template {

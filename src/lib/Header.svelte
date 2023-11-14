@@ -55,7 +55,7 @@
                         Dossier actuel
                     </div>
                 </button>
-                <p class="folder__client">HENRY Gary</p>
+                <p class="folder__client">HENRY Gary : #49348129</p>
             </div>
             <div class="searchBar">
                 <div class="search__icon__container">
