@@ -21,6 +21,8 @@
 
     import { openMenu } from "../scripts/menu";
 
+    import { notifications } from "../stores/notifications";
+
     // Modal
     import Modal from "./Modal.svelte";
     import PdfModal from "../Modals/PdfModal.svelte";
@@ -30,12 +32,17 @@
     function no_function() {
         console.log("Je dois implementer la fonction");
     }
+
+    const FILE_SAVED = "Votre fichier a ete enregistre avec succes";
 </script>
 
 {#if editor}
     <div class="main_bar">
         <div class="main_bar_group">
-            <button class="mainbar__button open_modal" on:click={no_function}>
+            <button
+                class="mainbar__button open_modal"
+                on:click={() => notifications.success(FILE_SAVED, 4000)}
+            >
                 <img class="icon" src={Save} alt="icon sauvegarder" />
                 <div class="mainbar__tooltip">Sauvegarder</div>
             </button>
