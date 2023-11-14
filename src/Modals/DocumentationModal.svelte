@@ -5,7 +5,7 @@
 </script>
 
 <div class="queryModal">
-    <h2 class="query__title tacenter">Recherche avancee</h2>
+    <h2 class="query__title tacenter">Documentation</h2>
     <div class="query__chat">
         <div class="query__flex">
             <img class="query__question__icon" src={Chat} alt="chat icon" />

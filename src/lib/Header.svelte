@@ -5,6 +5,8 @@
     import Plus from "../Icons/TopBar/Plus.svg";
     import Chat from "../Icons/TopBar/Chat.svg";
     import Params from "../Icons/TopBar/Params.svg";
+    import Question from "../Icons/TopBar/Question.svg";
+    import Update from "../Icons/TopBar/Update.svg";
 
     import {
         openSearchModal,
@@ -19,6 +21,8 @@
     import ParameterModal from "../Modals/ParameterModal.svelte";
     import NewFolderModal from "../Modals/NewFolderModal.svelte";
     import ChatModal from "../Modals/ChatModal.svelte";
+    import DocumentationModal from "../Modals/DocumentationModal.svelte";
+    import UpdateModal from "../Modals/UpdateModal.svelte";
 
     // NOTE: Surement une fonction async ensuite il faudra valider tout cela (avec Zod ?)
     // const handleData = (e) => {
@@ -45,7 +49,7 @@
                 <button
                     on:click={() =>
                         notifications.info(
-                            "Je lance une notification les gars",
+                            "Les notifications semblent bien fonctionner.",
                             2000
                         )}
                     class="current header__button"
@@ -55,7 +59,7 @@
                         Dossier actuel
                     </div>
                 </button>
-                <p class="folder__client">HENRY Gary : #49348129</p>
+                <p class="folder__client">John DOE : #49348129</p>
             </div>
             <div class="searchBar">
                 <div class="search__icon__container">
@@ -90,8 +94,40 @@
                         </div>
                     </button>
                 </div>
+                <div class="documentation">
+                    <Modal>
+                        <DocumentationModal />
+                    </Modal>
+                    <button
+                        on:click={(e) => {
+                            openModal(e);
+                        }}
+                        class="doc header__button"
+                    >
+                        <img src={Question} alt="doc icon" />
+                        <div class="header__tooltip tooltip_chat">
+                            Documentation
+                        </div>
+                    </button>
+                </div>
+                <div class="update_button">
+                    <Modal>
+                        <UpdateModal />
+                    </Modal>
+                    <button
+                        on:click={(e) => {
+                            openModal(e);
+                        }}
+                        class="update header__button"
+                    >
+                        <img src={Update} alt="update icon" />
+                        <div class="header__tooltip tooltip_chat">
+                            Mise a jour
+                        </div>
+                    </button>
+                </div>
 
-                <div class="newFolder">
+                <div class="newFolder_button">
                     <Modal>
                         <NewFolderModal />
                     </Modal>
@@ -228,11 +264,20 @@
     }
 
     .chat {
-        background-color: #ae68e6;
+        background-color: #f75c03;
     }
 
     .current {
         background-color: #f7d002;
+    }
+
+    .doc {
+        background-color: #6867ac;
+    }
+
+    .update {
+        background-color: #f75c03;
+        background-color: #ae68e6;
     }
 
     .header__tooltip {

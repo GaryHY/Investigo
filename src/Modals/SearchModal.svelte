@@ -16,12 +16,6 @@
     // TODO: Mettre tout cela dans un store que je vais actualiser on change.
     let dossiers: IFolder[] = [
         {
-            id: "173432383",
-            firstname: "Gary",
-            lastname: "HENRY",
-            status: "todo",
-        },
-        {
             id: "493232783",
             firstname: "Livio",
             lastname: "HENRY",
@@ -38,6 +32,12 @@
             firstname: "Chantal",
             lastname: "HENRY",
             status: "ok",
+        },
+        {
+            id: "173432383",
+            firstname: "Gary",
+            lastname: "HENRY",
+            status: "todo",
         },
     ];
 
