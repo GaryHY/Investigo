@@ -33,13 +33,23 @@
             return item.toLowerCase().includes(searchQuery.toLowerCase());
         });
     }
+
+    // NOTE: Je vais faire le button folder lancer des notifications juste pour tester :
+    import { notifications } from "../stores/notifications";
 </script>
 
 <header class="header">
     <div class="container">
         <div class="header__content">
             <div class="folder">
-                <button class="current header__button">
+                <button
+                    on:click={() =>
+                        notifications.info(
+                            "Je lance une notification les gars",
+                            2000
+                        )}
+                    class="current header__button"
+                >
                     <img src={Folder} alt="folder__icon" />
                     <div class="header__tooltip tooltip_chat">
                         Dossier actuel

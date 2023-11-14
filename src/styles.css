@@ -61,6 +61,7 @@ a {
     grid-template-columns: repeat(22, 1fr);
     height: 100vh;
     background-color: #171717;
+    position: relative;
 }
 
 button:is(:hover, :focus) {
