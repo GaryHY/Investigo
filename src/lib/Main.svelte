@@ -46,7 +46,9 @@
     import Mandat from "../Templates/Mandat.svelte";
     import Devis from "../Templates/Devis.svelte";
     import Facture from "../Templates/Facture.svelte";
+    import Rapport from "../Templates/Rapport.svelte";
     // import Photos from "../Templates/Photos.svelte";
+    import Footer from "../Templates/TemplateFooter.svelte";
 
     let element;
     let editor;
@@ -87,15 +89,9 @@
     <div class="paper">
         {#if mainState === "rapport"}
             <Menu />
-            <div class="template">
-                <img
-                    class="imgtest"
-                    src="http://via.placeholder.com/60?text=1"
-                    alt="phototest"
-                />
-                <h2>Je suis dans la partie rapport en fait.</h2>
-            </div>
-            <div class="editortext" bind:this={element} />
+            <Rapport />
+            <div class="mt-medium editortext" bind:this={element} />
+            <Footer />
         {/if}
         {#if mainState === "devis"}
             <Devis />
@@ -133,12 +129,6 @@
         height: 100%;
         height: 20vh;
         outline: 2px solid rebeccapurple;
-    }
-
-    .template {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
     }
 
     /* NOTE: Le css de l'ancien main en fait. */

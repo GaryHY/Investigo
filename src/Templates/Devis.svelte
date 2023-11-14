@@ -1,11 +1,11 @@
 <script>
     // on fait le devis
-    import TemplateHeader from "./TemplateHeader.svelte";
-    import logo_snarp from "../Icons/Templates/logo_snarp.png";
+    import Header from "./TemplateHeader.svelte";
+    import Footer from "./TemplateFooter.svelte";
 </script>
 
 <div class="template">
-    <TemplateHeader title="" />
+    <Header title="Devis" />
     <p class="uppercase mt-large">
         BP 176, 97170 <span class="bold">PETIT BOURG</span>
     </p>
@@ -72,14 +72,7 @@
     <div class="devis__signature">
         <p>Signature du client (precede de la mention "Bon pour accord")</p>
     </div>
-    <div class="devis__footer">
-        <p class="italic">
-            Agence agréé <img class="logo__footer" src={logo_snarp} alt="" />AIR
-            SAS enregistré au C N A P S sous Autorisation N°
-            AUT-971-2117-12-28-20180681319 ET Agrément C N A PS Sous N° AGD
-            -971-2023-10-03-2018038285 POINTE A PITRE SIRET : N° 90143799600019
-        </p>
-    </div>
+    <Footer />
 </div>
 
 <style>
@@ -140,16 +133,5 @@
         background-color: #bcbdc0;
         font-weight: 500;
         border-radius: 0.5rem;
-    }
-
-    .devis__footer {
-        font-size: 0.7rem;
-        margin-top: 8rem;
-    }
-
-    .logo__footer {
-        display: inline;
-        width: 6rem;
-        margin-inline: 1rem;
     }
 </style>
