@@ -2,11 +2,23 @@
     // TODO: Faire venir les images du fichier ici
     import MenuImage from "../Menus/MenuImage.svelte";
     import MenuAudio from "../Menus/MenuAudio.svelte";
+    import menuState from "../stores/menu";
+    let handleMenu = {
+        menu: "image",
+        toggle: false,
+    };
+    menuState.subscribe((newValue) => {
+        handleMenu = newValue;
+    });
 </script>
 
-<div class="menu" data-visible="false">
-    <MenuImage />
-    <MenuAudio />
+<div class="menu" class:menuVisible={!handleMenu.toggle}>
+    {#if handleMenu.menu === "image"}
+        <MenuImage />
+    {/if}
+    {#if handleMenu.menu === "audio"}
+        <MenuAudio />
+    {/if}
 </div>
 
 <style>
@@ -21,8 +33,7 @@
         overflow-y: scroll;
     }
 
-    /* TODO: Je ne sais pas faire fonctionner ce truc en fait. */
-    .menu[data-visible="false"] {
+    .menuVisible {
         transform: translateX(100%);
     }
 </style>

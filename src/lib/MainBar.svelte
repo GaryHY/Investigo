@@ -19,7 +19,17 @@
     import Heading2 from "../Icons/Mainbar/Heading-2.svg";
     import Paragraph from "../Icons/Mainbar/Paragraph.svg";
 
-    import { openMenu } from "../scripts/menu";
+    // import { openMenu } from "../scripts/menu";
+
+    import menuState from "../stores/menu";
+    function toggleState(e) {
+        menuState.update((oldValue) => {
+            return {
+                menu: `${e.target.closest("button").id}`,
+                toggle: !oldValue.toggle,
+            };
+        });
+    }
 
     import { notifications } from "../stores/notifications";
 
@@ -150,15 +160,17 @@
             <div class="mainbar__tooltip">Apercu PDF</div>
         </button>
         <button
+            id="audio"
             class="mainbar__button open_menu audio_menu"
-            on:click={openMenu}
+            on:click={toggleState}
         >
             <img class="icon" src={Audio} alt="icon audio" />
             <div class="mainbar__tooltip">Enregistrements</div>
         </button>
         <button
             class="mainbar__button open_menu image_menu"
-            on:click={openMenu}
+            on:click={toggleState}
+            id="image"
         >
             <img class="icon" src={Hamburger} alt="icon hamburger" />
             <div class="mainbar__tooltip">Apercu image</div>

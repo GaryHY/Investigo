@@ -71,14 +71,12 @@
     ];
 
     function handleConsider(e) {
-        console.log("consider");
         images = e.detail.items;
     }
 
     function handleFinalize(e) {
-        console.log("finalize");
         images = e.detail.items;
-        console.log("Le nouveau images est : ", images);
+        // console.log("Le nouveau images est : ", images);
     }
 
     let editing = false;
