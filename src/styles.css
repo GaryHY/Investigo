@@ -62,6 +62,7 @@ a {
     height: 100vh;
     background-color: #171717;
     position: relative;
+    padding-right: 5rem;
 }
 
 button:is(:hover, :focus) {

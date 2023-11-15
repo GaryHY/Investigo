@@ -36,7 +36,7 @@
     // modal
     import Modal from "./Modal.svelte";
     import InfoModal from "../Modals/InfoModal.svelte";
-    import PhotoModal from "../Modals/PhotoModal.svelte";
+    // import PhotoModal from "../Modals/PhotoModal.svelte";
     import EnvoyerModal from "../Modals/EnvoyerModal.svelte";
     import ReseauxModal from "../Modals/ReseauxModal.svelte";
     import { openModal } from "../scripts/modal";
@@ -46,7 +46,7 @@
     <Modal>
         <InfoModal />
     </Modal>
-    <button id="info" class="sidebar__button" on:click={openModal}>
+    <button id="info" class="sidebar__button highlight" on:click={openModal}>
         <img class="sidebar__img" src={Info} alt="" />
         <div class="tooltip">Infos</div>
     </button>
@@ -89,10 +89,16 @@
         <div class="tooltip">Facture</div>
         <div class="file__missing" data-done={file__missing.facture} />
     </button>
-    <Modal>
-        <PhotoModal />
-    </Modal>
-    <button id="photos" on:click={openModal} class="sidebar__button highlight">
+    <!-- <Modal> -->
+    <!--     <PhotoModal /> -->
+    <!-- </Modal> -->
+    <!-- <button id="photos" on:click={openModal} class="sidebar__button highlight"> -->
+    <button
+        id="photos"
+        class="sidebar__button highlight"
+        class:actif={active__button == "photos"}
+        on:click={setState}
+    >
         <img class="sidebar__img" src={Photo} alt="" />
         <div class="tooltip">Photo</div>
     </button>
@@ -145,7 +151,8 @@
     .sidebar {
         display: flex;
         flex-direction: column;
-        padding-top: 4.2rem;
+        padding-top: 2.3rem;
+        /* padding-top: auto; */
     }
 
     .sidebar__button {
@@ -156,7 +163,6 @@
         padding-block: 1.1rem;
         /* NOTE: Pour les tooltips */
         position: relative;
-        outline: 2px solid #27272d;
     }
 
     .sidebar__img {

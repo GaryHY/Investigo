@@ -1,7 +1,7 @@
 <script>
     // @ts-nocheck
     export let editor;
-
+    export let mainState;
     // Mes import de svg
     import Pdf from "../Icons/Mainbar/Pdf.svg";
     import Audio from "../Icons/Mainbar/Audio.svg";
@@ -36,29 +36,29 @@
     const FILE_SAVED = "Votre fichier a ete enregistre avec succes";
 </script>
 
-{#if editor}
-    <div class="main_bar">
-        <div class="main_bar_group">
-            <button
-                class="mainbar__button open_modal"
-                on:click={() => notifications.success(FILE_SAVED, 4000)}
-            >
-                <img class="icon" src={Save} alt="icon sauvegarder" />
-                <div class="mainbar__tooltip">Sauvegarder</div>
-            </button>
+<div class="main_bar">
+    <div class="main_bar_group">
+        <button
+            class="mainbar__button open_modal"
+            on:click={() => notifications.success(FILE_SAVED, 4000)}
+        >
+            <img class="icon" src={Save} alt="icon sauvegarder" />
+            <div class="mainbar__tooltip">Sauvegarder</div>
+        </button>
+        <Modal>
+            <PrintModal />
+        </Modal>
+        <button class="mainbar__button open_modal" on:click={openModal}>
+            <img class="icon" src={Print} alt="icon print" />
+            <div class="mainbar__tooltip">Imprimer</div>
+        </button>
+    </div>
+    {#if editor && mainState === "rapport"}
+        <div class="main_bar_group split">
             <button class="mainbar__button open_modal" on:click={no_function}>
                 <img class="icon" src={Undo} alt="icon pdf" />
                 <div class="mainbar__tooltip">Undo</div>
             </button>
-            <Modal>
-                <PrintModal />
-            </Modal>
-            <button class="mainbar__button open_modal" on:click={openModal}>
-                <img class="icon" src={Print} alt="icon print" />
-                <div class="mainbar__tooltip">Imprimer</div>
-            </button>
-        </div>
-        <div class="main_bar_group split">
             <button
                 class="mainbar__button open_modal"
                 on:click={() => {
@@ -140,31 +140,31 @@
                 <div class="mainbar__tooltip">Aligner a droite</div>
             </button>
         </div>
-        <div class="main_bar_group mla">
-            <Modal>
-                <PdfModal />
-            </Modal>
-            <button class="mainbar__button open_modal" on:click={openModal}>
-                <img class="icon" src={Pdf} alt="icon pdf" />
-                <div class="mainbar__tooltip">Apercu PDF</div>
-            </button>
-            <button
-                class="mainbar__button open_menu audio_menu"
-                on:click={openMenu}
-            >
-                <img class="icon" src={Audio} alt="icon audio" />
-                <div class="mainbar__tooltip">Enregistrements</div>
-            </button>
-            <button
-                class="mainbar__button open_menu image_menu"
-                on:click={openMenu}
-            >
-                <img class="icon" src={Hamburger} alt="icon hamburger" />
-                <div class="mainbar__tooltip">Apercu image</div>
-            </button>
-        </div>
+    {/if}
+    <div class="main_bar_group mla">
+        <Modal>
+            <PdfModal />
+        </Modal>
+        <button class="mainbar__button open_modal" on:click={openModal}>
+            <img class="icon" src={Pdf} alt="icon pdf" />
+            <div class="mainbar__tooltip">Apercu PDF</div>
+        </button>
+        <button
+            class="mainbar__button open_menu audio_menu"
+            on:click={openMenu}
+        >
+            <img class="icon" src={Audio} alt="icon audio" />
+            <div class="mainbar__tooltip">Enregistrements</div>
+        </button>
+        <button
+            class="mainbar__button open_menu image_menu"
+            on:click={openMenu}
+        >
+            <img class="icon" src={Hamburger} alt="icon hamburger" />
+            <div class="mainbar__tooltip">Apercu image</div>
+        </button>
     </div>
-{/if}
+</div>
 
 <style>
     .main_bar {

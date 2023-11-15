@@ -5,7 +5,6 @@
     // let mainState = "rapport";
     let mainState = "rapport";
     import sidebarState from "../stores/sidebar";
-    console.log("Je veux voir la valeur du state", mainState);
     sidebarState.subscribe((newValue) => {
         mainState = newValue;
     });
@@ -47,7 +46,7 @@
     import Devis from "../Templates/Devis.svelte";
     import Facture from "../Templates/Facture.svelte";
     import Rapport from "../Templates/Rapport.svelte";
-    // import Photos from "../Templates/Photos.svelte";
+    import Photos from "../Templates/Photos.svelte";
     import Footer from "../Templates/TemplateFooter.svelte";
 
     let element;
@@ -69,9 +68,6 @@
                     editor = editor;
                 },
             });
-            // NOTE: Je mets un else pour le moment mais faudra le bouger surement
-        } else {
-            let pageCount = getPageCount();
         }
     });
 
@@ -84,31 +80,34 @@
     });
 </script>
 
-<MainBar {editor} />
+<MainBar {editor} {mainState} />
 <div class="main" on:scroll={scrollMenu}>
-    <div class="paper">
-        {#if mainState === "rapport"}
-            <Menu />
-            <Rapport />
-            <div class="mt-medium editortext" bind:this={element} />
-            <Footer />
-        {/if}
-        {#if mainState === "devis"}
-            <Devis />
-        {/if}
+    {#if mainState === "photos"}
+        <Photos />
+    {/if}
+    {#if mainState !== "photos"}
+        <div class="padding__main">
+            <div class="paper">
+                {#if mainState === "rapport"}
+                    <Menu />
+                    <Rapport />
+                    <div class="mt-medium editortext" bind:this={element} />
+                    <Footer />
+                {/if}
+                {#if mainState === "devis"}
+                    <Devis />
+                {/if}
 
-        {#if mainState === "mandat"}
-            <Mandat />
-        {/if}
+                {#if mainState === "mandat"}
+                    <Mandat />
+                {/if}
 
-        {#if mainState === "facture"}
-            <Facture />
-        {/if}
-        <!-- Je le commente en attendant que je gere le probleme de pagination. -->
-        <!-- {#if mainState === "photos"} -->
-        <!--     <Photos /> -->
-        <!-- {/if} -->
-    </div>
+                {#if mainState === "facture"}
+                    <Facture />
+                {/if}
+            </div>
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -134,7 +133,9 @@
     /* NOTE: Le css de l'ancien main en fait. */
     .main {
         position: relative;
-        padding: 6rem;
         background-color: #f3f3f3;
+    }
+    .padding__main {
+        padding: 6rem;
     }
 </style>
