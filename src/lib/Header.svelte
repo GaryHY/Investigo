@@ -7,6 +7,7 @@
     import Params from "../Icons/TopBar/Params.svg";
     import Question from "../Icons/TopBar/Question.svg";
     import Update from "../Icons/TopBar/Update.svg";
+    import Requete from "../Icons/TopBar/Requete.svg";
 
     import {
         openSearchModal,
@@ -23,6 +24,7 @@
     import ChatModal from "../Modals/ChatModal.svelte";
     import DocumentationModal from "../Modals/DocumentationModal.svelte";
     import UpdateModal from "../Modals/UpdateModal.svelte";
+    import RequeteModal from "../Modals/RequeteModal.svelte";
 
     // NOTE: Surement une fonction async ensuite il faudra valider tout cela (avec Zod ?)
     // const handleData = (e) => {
@@ -108,6 +110,20 @@
                         <div class="header__tooltip tooltip_chat">
                             Documentation
                         </div>
+                    </button>
+                </div>
+                <div class="request__button">
+                    <Modal>
+                        <RequeteModal />
+                    </Modal>
+                    <button
+                        on:click={(e) => {
+                            openModal(e);
+                        }}
+                        class="request header__button"
+                    >
+                        <img src={Requete} alt="request icon" />
+                        <div class="header__tooltip tooltip_chat">Requete</div>
                     </button>
                 </div>
                 <div class="update_button">
@@ -264,7 +280,8 @@
     }
 
     .chat {
-        background-color: #f75c03;
+        background-color: #ba90c6;
+        background-color: #6867ac;
     }
 
     .current {
@@ -272,12 +289,17 @@
     }
 
     .doc {
-        background-color: #6867ac;
+        background-color: #f4b7b6;
+        background-color: #f75c03;
     }
 
     .update {
-        background-color: #f75c03;
         background-color: #ae68e6;
+    }
+
+    .request {
+        background-color: #b3f2dd;
+        background-color: red;
     }
 
     .header__tooltip {
