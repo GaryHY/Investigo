@@ -10,73 +10,19 @@
     import { dndzone } from "svelte-dnd-action";
     import { flip } from "svelte/animate";
 
+    import photos from "../stores/photos";
+
     const flipDurationMs = 100;
     // TODO: Voir avec client comment gerer la taille des images
-    const size = 150;
+    // const size = 150;
     // const size = 100;
 
-    // TODO: Put this into a store.
-    let images = [
-        {
-            id: 1,
-            img: `http://via.placeholder.com/${size}?text=1`,
-            caption: "Je mets la caption de l'image 1.",
-        },
-
-        {
-            id: 2,
-            img: `http://via.placeholder.com/${size}?text=2`,
-            caption: "Je mets la caption de l'image 2.",
-        },
-        {
-            id: 3,
-            img: `http://via.placeholder.com/${size}?text=3`,
-            caption: "Je mets la caption de l'image 3.",
-        },
-        {
-            id: 4,
-            img: `http://via.placeholder.com/${size}?text=4`,
-            caption: "Je mets la caption de l'image 4.",
-        },
-        {
-            id: 5,
-            img: `http://via.placeholder.com/${size}?text=5`,
-            caption: "Je mets la caption de l'image 5.",
-        },
-        {
-            id: 6,
-            img: `http://via.placeholder.com/${size}?text=6`,
-            caption: "Je mets la caption de l'image 6.",
-        },
-        {
-            id: 7,
-            img: `http://via.placeholder.com/${size}?text=7`,
-            caption: "Je mets la caption de l'image 7.",
-        },
-        {
-            id: 8,
-            img: `http://via.placeholder.com/${size}?text=8`,
-            caption: "Je mets la caption de l'image 8.",
-        },
-        {
-            id: 9,
-            img: `http://via.placeholder.com/${size}?text=9`,
-            caption: "Je mets la caption de l'image 9.",
-        },
-        {
-            id: 10,
-            img: `http://via.placeholder.com/${size}?text=10`,
-            caption: "Je mets la caption de l'image 10.",
-        },
-    ];
-
     function handleConsider(e) {
-        images = e.detail.items;
+        $photos = e.detail.items;
     }
 
     function handleFinalize(e) {
-        images = e.detail.items;
-        // console.log("Le nouveau images est : ", images);
+        $photos = e.detail.items;
     }
 
     let editing = false;
@@ -87,13 +33,13 @@
         on:consider={handleConsider}
         on:finalize={handleFinalize}
         use:dndzone={{
-            items: images,
+            items: $photos,
             flipDurationMs: flipDurationMs,
             dropTargetStyle: {},
         }}
         class="image__container"
     >
-        {#each images as card (card.id)}
+        {#each $photos as photo (photo.id)}
             <div
                 class="image__component"
                 animate:flip={{ duration: flipDurationMs }}
@@ -102,15 +48,15 @@
                 <div>
                     <button
                         on:dblclick={() => (editing = !editing)}
-                        class="image__rank">{card.id}</button
+                        class="image__rank">{photo.id}</button
                     >
                     <input hidden type="text" />
                 </div>
                 <button class="item">
                     <img
                         class="placeholder"
-                        src={card.img}
-                        alt={`placeholder ${card.id}`}
+                        src={photo.img}
+                        alt={`placeholder ${photo.id}`}
                     />
                 </button>
             </div>

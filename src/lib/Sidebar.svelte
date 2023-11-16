@@ -36,7 +36,6 @@
     // modal
     import Modal from "./Modal.svelte";
     import InfoModal from "../Modals/InfoModal.svelte";
-    // import PhotoModal from "../Modals/PhotoModal.svelte";
     import EnvoyerModal from "../Modals/EnvoyerModal.svelte";
     import ReseauxModal from "../Modals/ReseauxModal.svelte";
     import { openModal } from "../scripts/modal";
@@ -89,10 +88,6 @@
         <div class="tooltip">Facture</div>
         <div class="file__missing" data-done={file__missing.facture} />
     </button>
-    <!-- <Modal> -->
-    <!--     <PhotoModal /> -->
-    <!-- </Modal> -->
-    <!-- <button id="photos" on:click={openModal} class="sidebar__button highlight"> -->
     <button
         id="photos"
         class="sidebar__button highlight"
