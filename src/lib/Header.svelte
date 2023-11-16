@@ -47,21 +47,39 @@
 <header class="header">
     <div class="container">
         <div class="header__content">
-            <div class="folder">
-                <button
-                    on:click={() =>
-                        notifications.info(
-                            "Les notifications semblent bien fonctionner.",
-                            2000
-                        )}
-                    class="current header__button"
-                >
-                    <img src={Folder} alt="folder__icon" />
-                    <div class="header__tooltip tooltip_chat">
-                        Dossier actuel
-                    </div>
-                </button>
-                <p class="folder__client">John DOE : #49348129</p>
+            <div style="display:flex; align-items:center">
+                <div class="newFolder_button">
+                    <Modal>
+                        <NewFolderModal />
+                    </Modal>
+                    <button
+                        on:click={(e) => {
+                            openModal(e);
+                        }}
+                        class="add header__button"
+                    >
+                        <img src={Plus} alt="plus icon" />
+                        <div class="header__tooltip tooltip_add">
+                            Nouveau Dossier
+                        </div>
+                    </button>
+                </div>
+                <div class="folder">
+                    <button
+                        on:click={() =>
+                            notifications.info(
+                                "Les notifications semblent bien fonctionner.",
+                                2000
+                            )}
+                        class="current header__button"
+                    >
+                        <img src={Folder} alt="folder__icon" />
+                        <div class="header__tooltip tooltip_chat">
+                            Dossier actuel
+                        </div>
+                    </button>
+                    <p class="folder__client">John DOE : #49348129</p>
+                </div>
             </div>
             <div class="searchBar">
                 <div class="search__icon__container">
@@ -143,22 +161,6 @@
                     </button>
                 </div>
 
-                <div class="newFolder_button">
-                    <Modal>
-                        <NewFolderModal />
-                    </Modal>
-                    <button
-                        on:click={(e) => {
-                            openModal(e);
-                        }}
-                        class="add header__button"
-                    >
-                        <img src={Plus} alt="plus icon" />
-                        <div class="header__tooltip tooltip_add">
-                            Nouveau Dossier
-                        </div>
-                    </button>
-                </div>
                 <div class="newSettings">
                     <ParameterModal />
                     <button
@@ -262,14 +264,16 @@
     }
 
     .folder {
-        /* TODO: Organiser cela pour ne pas avoir a gerer cela */
         color: white;
         font-size: 1.2rem;
         margin-left: 1rem;
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
     }
+
+    /* TODO: Coder cela pour quand un folder n'a pas encore ete ouvert. */
+    /* .folder__empty{} */
 
     .add {
         background-color: #fc76a1;

@@ -149,6 +149,10 @@ button.active > path {
     text-align: right;
 }
 
+.taleft {
+    text-align: left;
+}
+
 .underline{
     text-decoration: underline;
 }
