@@ -83,9 +83,9 @@
         display: none;
         position: absolute;
         width: 45%;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 51.5%;
         top: 10%;
+        transform: translateX(-50%);
         z-index: 100000;
         border: none;
         background-color: #171717;

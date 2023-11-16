@@ -42,6 +42,8 @@
 
     // NOTE: Je vais faire le button folder lancer des notifications juste pour tester :
     import { notifications } from "../stores/notifications";
+    // TODO:Need to set this up by linking to the store value;
+    let isFolderOpen = true;
 </script>
 
 <header class="header">
@@ -72,13 +74,16 @@
                                 2000
                             )}
                         class="current header__button"
+                        class:folderOpen={isFolderOpen}
                     >
                         <img src={Folder} alt="folder__icon" />
                         <div class="header__tooltip tooltip_chat">
                             Dossier actuel
                         </div>
                     </button>
-                    <p class="folder__client">John DOE : #49348129</p>
+                    {#if isFolderOpen}
+                        <p class="folder__client">John DOE : #49348129</p>
+                    {/if}
                 </div>
             </div>
             <div class="searchBar">
@@ -190,6 +195,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding-block: 4px;
     }
 
     .container {
@@ -202,13 +208,7 @@
         width: 45%;
         display: flex;
         align-items: center;
-        /* outline: 2px solid #171717; */
         border-radius: var(--border-radius);
-
-        position: absolute;
-        left: 50%;
-        top: 1.2%;
-        transform: translateX(-50%);
     }
 
     /* NOTE: Is it useful ? */
@@ -250,9 +250,9 @@
     }
 
     .header__button {
+        color: white;
         border: none;
         padding: 0.75rem;
-        color: white;
         border-radius: 0.5rem;
         position: relative;
     }
@@ -289,7 +289,17 @@
     }
 
     .current {
+        background: none;
+        border-radius: 100vw;
+        border: 2px solid white;
+        padding: 0.8rem 0.9rem;
+    }
+
+    .folderOpen {
         background-color: #f7d002;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem;
     }
 
     .doc {
