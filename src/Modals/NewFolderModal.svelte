@@ -46,11 +46,17 @@
         padding: 0.5rem;
         font-size: 1.5rem;
         border-radius: 0.5rem;
+        border: 2px solid white;
     }
 
     input:focus {
         /* TODO: Trouver la couleur dans le site de tonton Frantz */
-        outline: 1px solid blue;
+        border: 2px solid #2ea6ff;
+        outline: none;
+    }
+
+    label {
+        text-transform: capitalize;
     }
 
     h2 {
@@ -63,8 +69,18 @@
     }
 
     .submit__button {
+        margin-top: 2rem;
         border: none;
         padding: 1rem;
-        border-radius: 0.2rem;
+        border-radius: 0.5rem;
+        background-color: hsl(206, 100%, 39%);
+        color: white;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .submit__button:hover {
+        cursor: pointer;
+        background-color: hsl(206, 100%, 59%);
     }
 </style>
