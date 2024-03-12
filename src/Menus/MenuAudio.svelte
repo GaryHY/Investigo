@@ -1,5 +1,6 @@
 <script>
     // Ici je vais recuperer les audios stockes.
+    // TODO: I made that component in react at this link (), I just need to "translate it" in svelte
 </script>
 
 <div class="menu__audio">

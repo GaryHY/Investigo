@@ -71,7 +71,7 @@
                         on:click={() =>
                             notifications.info(
                                 "Les notifications semblent bien fonctionner.",
-                                2000
+                                2000,
                             )}
                         class="current header__button"
                         class:folderOpen={isFolderOpen}

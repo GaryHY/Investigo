@@ -3,7 +3,16 @@
 import {writable} from "svelte/store"
 
 async function getInitalPhotos(){
-    console.log("Je dois aller chercher les photos");
+    const url = new URL("");
+    const res = await fetch(url, {
+        method: "GET",
+        mode: "cors",
+        headers: {
+            Accept: "multipart/formdata",
+        },
+    })
+    const photos = await res.blob()
+    return photos
 }
 
 // TODO: Mettre ceci dans le store en valeur initiale.
@@ -66,7 +75,8 @@ const photosState = writable([
     },
 ])
 
-// TODO: Une fonction qui prend un path absolu de l'ordi et qui s'occupe de l'envouer dans le stockage.
+// TODO: Une fonction qui prend un path absolu de l'ordi et qui s'occupe de l'envoyer dans le stockage dedie.
+// Ici on peut penser a du S3 ou encoure 
 // function addPhoto(path){
 //
 // }

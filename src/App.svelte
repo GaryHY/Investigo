@@ -9,6 +9,7 @@
     // differents request that I am going to make.
     // let user;
 
+    // I need to do this using some routing
     let isAuthentified = true;
 </script>
 

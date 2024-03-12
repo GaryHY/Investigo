@@ -5,13 +5,12 @@
     import { flip } from "svelte/animate";
     import { fly } from "svelte/transition";
 
+    // NOTE: Mettre cela dans un store pour le parametrer ? let border_thinkness = 3; Quelque chose comme un dossier constants
     let themes = {
         information: "hsl(206, 100%, 39%)",
         success: "limegreen",
         erreur: "red",
     };
-
-    // NOTE: Mettre cela dans un store pour le parametrer ? let border_thinkness = 3;
     let border_thinkness = 3;
 </script>
 

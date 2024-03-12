@@ -1,7 +1,7 @@
 <script>
     function getAuthenticated() {
         console.log(
-            "function to make for the authentication process, need a store for that ?"
+            "function to make for the authentication process, need a store for that ?",
         );
     }
 
@@ -135,3 +135,4 @@
         background-color: hsl(206, 100%, 59%);
     }
 </style>
+

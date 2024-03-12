@@ -7,9 +7,24 @@ fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
+#[tauri::command]
+fn someOtherFunc(name: &str) -> String {
+    format!("Hello, {}! You've been greeted from Rust!", name)
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        // NOTE: old function
+        // .invoke_handler(tauri::generate_handler![greet])
+        // NOTE: Put all the function exposed to the frontend in here.
+        .invoke_handler(tauri::generate_handler![
+            greet,
+            someOtherFunc,
+            greet,
+            someOtherFunc,
+            greet,
+            someOtherFunc
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

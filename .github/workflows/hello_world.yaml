@@ -1,0 +1,18 @@
+name: the first one just to try 
+
+# TODO: Add all the jobs necessary to test everything
+
+on: 
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+    
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
