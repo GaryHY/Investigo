@@ -1,5 +1,4 @@
 <script>
-    // import des svg
     import Folder from "../Icons/TopBar/Folder.svg";
     import Loupe from "../Icons/TopBar/Loupe.svg";
     import Plus from "../Icons/TopBar/Plus.svg";
@@ -47,7 +46,6 @@
                 </button>
                 <p class="folder__client">HENRY Gary</p>
             </div>
-            <!-- <div class="bloc" /> -->
             <div class="searchBar">
                 <div class="search__icon__container">
                     <img class="search__icon" src={Loupe} alt="" />
@@ -175,7 +173,7 @@
 
     .search__icon__container {
         background-color: red;
-        padding: 0.75rem 2rem;
+        padding: 1rem 2rem;
         background-color: #27272d;
         border: 1px solid white;
         outline: 2px solid #171717;
@@ -195,7 +193,7 @@
         border: 1px solid white;
         background-color: #111111;
         color: white;
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
     .searchBar__input:is(:focus, :focus-visible) {

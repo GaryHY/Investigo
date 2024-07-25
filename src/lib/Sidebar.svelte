@@ -1,6 +1,8 @@
 <script lang="ts">
     // TODO: Make the modal for the photo, envoyer et reseaux part
     import sidebarState from "../stores/sidebar";
+    import { invoke } from "@tauri-apps/api/tauri";
+    // const invoke = window.__TAURI__.invoke
 
     // NOTE: Check if it the good  type
     // const handleSidebarClick = (e: MouseEvent) => {
@@ -14,6 +16,7 @@
             closestButton.classList.add("actif");
             sidebarState.set(closestButton.id);
         }
+        invoke("greet").then((message) => console.log(message));
     };
 
     // icons
@@ -124,12 +127,12 @@
         display: flex;
         flex-direction: column;
         padding-top: 7rem;
+        outline: 2px solid blue;
     }
 
     .sidebar__button {
         border: none;
         background: none;
-        margin-inline: auto;
         width: 100%;
         padding-block: 1.5rem;
         /* NOTE: Pour les tooltips */
@@ -138,6 +141,7 @@
 
     .sidebar__img {
         filter: brightness(0.6);
+        margin-inline: auto;
     }
 
     /* .sidebar__button:hover, */
